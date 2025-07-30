@@ -1,25 +1,115 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Welcome from './component/welcome';
+import Mylist from './component/mylist';
+import Myheader from './component/header';
+import Students from './component/students';
+import ImageWithProps from './component/imagewithprops';
+import Counter from './component/counter';
+import QuoteGenerator from './component/QuoteGenerator';
+import TodoList from './component/todo-list';
 function App() {
+  // Original student data
+  // const simpleStudent = {
+  //   name: "M.Waqas Chohan",
+  //   roll: "23F-3041"
+  // };
+
+  // Enhanced student data
+  const students = [
+    {
+      name: "Alice Johnson",
+      roll: "CS2021001",
+      department: "Computer Science",
+      email: "alice@university.edu",
+      year: "2024",
+      gpa: "3.8",
+      isActive: true
+    },
+    {
+      name: "M Waqas Chohan",
+      roll: "ENG2021002", 
+      department: "Software Engineering",
+      email: "Fast@cfd.nu.edu.pk",
+      year: "2025",
+      gpa: "3.6",
+      isActive: true
+    },
+    {
+      name: "Carol Davis",
+      roll: "MATH2021003",
+      department: "Mathematics", 
+      email: "carol@university.edu",
+      year: "2024",
+      gpa: "3.9",
+      isActive: false
+    }
+  ];
+
+  const handleViewDetails = (student) => {
+    alert(`Viewing details for ${student.name}`);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Myheader/>
+      
+      {/* Original simple student component */}
+      {/* <Students name={simpleStudent.name} roll={simpleStudent.roll} /> */}
+      
+      {/* New enhanced student cards section */}
+      <div style={{ 
+        padding: '20px',
+        backgroundColor: '#f8fafc',
+        marginTop: '20px'
+      }}>
+        <h2 style={{ 
+          textAlign: 'center', 
+          color: '#1e293b',
+          marginBottom: '20px'
+        }}>
+          Enhanced Student Cards
+        </h2>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: '20px',
+          maxWidth: '1200px',
+          margin: '0 auto'
+        }}>
+          {students.map((student, index) => (
+            <Students
+              key={index}
+              name={student.name}
+              roll={student.roll}
+              department={student.department}
+              email={student.email}
+              year={student.year}
+              gpa={student.gpa}
+              isActive={student.isActive}
+              onViewDetails={handleViewDetails}
+            />
+          ))}
+        </div>
+      </div>
+
+      <Welcome/>
+      <Mylist/>
+      <h1>Hello React</h1>
+      <p>This is my first react app</p>
+
+
+<ImageWithProps 
+  width={1200} 
+  height={675}
+/>
+<Counter/>
+<TodoList/>
+<QuoteGenerator/>
     </div>
   );
 }
 
 export default App;
+
+// state hooks routing

@@ -129,7 +129,7 @@ import CounterPage from "./pages/CounterPage";
 import FormPage from "./pages/FormPage"
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/My-React-App">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

@@ -5,6 +5,7 @@ import { saveAs } from 'file-saver';
 function FormExample() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [review, setReview] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   const generateDocx = () => {
@@ -35,6 +36,23 @@ function FormExample() {
                 new TextRun({
                   text: `Email: ${email}`,
                   size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: `Review:`,
+                  bold: true,
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: review,
+                  size: 22,
                 }),
               ],
             }),
@@ -87,6 +105,19 @@ function FormExample() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              style={{ width: '100%', padding: '8px' }}
+              required
+            />
+          </label>
+        </div>
+
+        <div style={{ marginBottom: '15px' }}>
+          <label>
+            Review: <br />
+            <textarea
+              value={review}
+              onChange={(e) => setReview(e.target.value)}
+              rows="5"
               style={{ width: '100%', padding: '8px' }}
               required
             />

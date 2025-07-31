@@ -35,6 +35,9 @@ const Layout = () => {
             <Link to="/counter" style={linkStyle}>Counter</Link>
           </li>
           <li>
+            <Link to="/form" style={linkStyle}>Form Example</Link>
+          </li>
+          <li>
             <Link to="/about" style={linkStyle}>About</Link>
           </li>
         </ul>

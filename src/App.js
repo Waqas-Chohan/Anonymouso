@@ -126,7 +126,7 @@ import StudentsPage from "./pages/StudentsPage";
 import QuotesPage from "./pages/QuotesPage";
 import TodoPage from "./pages/TodoPage";
 import CounterPage from "./pages/CounterPage";
-
+import FormPage from "./pages/FormPage"
 function App() {
   return (
     <BrowserRouter>
@@ -137,6 +137,7 @@ function App() {
           <Route path="quotes" element={<QuotesPage />} />
           <Route path="todo" element={<TodoPage />} />
           <Route path="counter" element={<CounterPage />} />
+          <Route path="form" element={<FormPage/>}/>
         </Route>
       </Routes>
     </BrowserRouter>

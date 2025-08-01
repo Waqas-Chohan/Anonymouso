@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Waqas-Chohan.github.io/My-React-App",
+  "homepage": "https://Waqas-Chohan.github.io/Anonymouso",
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@testing-library/dom": "^10.4.1",

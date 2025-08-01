@@ -132,7 +132,7 @@ function App() {
         fontFamily: "'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
       }}
     >
-      <BrowserRouter basename="/My-React-App">
+      <BrowserRouter basename="/Anonymouso">
         <div
           style={{
             minHeight: "100vh",

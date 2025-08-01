@@ -70,7 +70,10 @@ function Layout() {
               style={{
                 height: "40px",
                 width: "40px",
-                objectFit: "contain",
+                objectFit: "cover",
+               borderRadius: "50%", // This makes it fully rounded (circular)
+               border: "2px solid #8544c7ff" // Optional: adds a nice border around the circle
+
               }}
             />
             
@@ -83,7 +86,7 @@ function Layout() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              My React App
+              Anonymouso
             </span>
           </Link>
 
@@ -272,7 +275,7 @@ function Layout() {
             gap: "1rem",
           }}
         >
-          <p style={{ margin: 0 }}>© 2024 My React App. Built with ❤️ and React</p>
+          <p style={{ margin: 0 }}>© 2025 Anonymouso React App. Built with ❤️ and React</p>
           <div
             style={{
               display: "flex",

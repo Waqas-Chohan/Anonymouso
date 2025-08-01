@@ -2,6 +2,7 @@
 
 import { Outlet, Link, useLocation } from "react-router-dom"
 import { useState } from "react"
+import logo from "./logo.png" // Import the logo image
 
 function Layout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -57,18 +58,33 @@ function Layout() {
           <Link
             to="/"
             style={{
-              fontSize: "clamp(1.5rem, 4vw, 2rem)",
-              fontWeight: "bold",
-              background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
               textDecoration: "none",
               display: "flex",
               alignItems: "center",
               gap: "0.5rem",
             }}
           >
-            ⚛️ My React App
+            <img
+              src={logo}
+              alt="Logo"
+              style={{
+                height: "40px",
+                width: "40px",
+                objectFit: "contain",
+              }}
+            />
+            
+            <span
+              style={{
+                fontSize: "clamp(1.5rem, 4vw, 2rem)",
+                fontWeight: "bold",
+                background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              My React App
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

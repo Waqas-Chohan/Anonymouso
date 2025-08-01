@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Document, Packer, Paragraph, TextRun } from "docx";
 import { saveAs } from 'file-saver';
 import emailjs from '@emailjs/browser';
@@ -10,6 +10,10 @@ function FormExample() {
   const [submitted, setSubmitted] = useState(false);
   const formRef = useRef(); // For emailjs
   const [sending, setSending] = useState(false); // To prevent double submission
+
+  useEffect(() => {
+  emailjs.init('SJnNUwfb6JTUzwFyN'); // making sure to initialize emailjs
+}, []);
 
   const generateDocx = () => {
     const doc = new Document({
